@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+	head
+		block title
+			title="Untitled Deck"
+		block style
+			style.
+				@import url('/css/default.css');
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+	body
+		h1.masthead
+			img(alt='Fine Alley', title='Fine Alley',src='/includes/img/finealleySlide1140x350.jpg').img-title.img-responsive
+		.container
+			block content
+				p content block is missing
+		.container
+			.site-footer
+				p &copy; Fine Alley 2015
+	script(src='//code.jquery.com/jquery-1.11.0.min.js')
+	script(src='/includes/js/finealley.min.js')

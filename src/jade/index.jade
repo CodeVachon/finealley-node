@@ -1,0 +1,69 @@
+extends ./includes/layout.jade
+
+mixin event(title, when, where)
+	.row.event-details
+		.col-xs-12.col-sm-4 
+			.visible-xs-inline-block What
+			| #{title}
+		.col-xs-12.col-sm-4 
+			.visible-xs-inline-block Where
+			| #{where}
+		.col-xs-12.col-sm-4 
+			.visible-xs-inline-block When
+			| #{when}
+
+mixin galleryimage(src, caption)
+	.gallery-image.col-xs-12.col-sm-4
+		img(src=src, alt=caption).img-responsive.img-thumbnail
+
+block title
+	title="Fine Alley The Band"
+	meta(name="description", content="Get more information on Fine Alley and Upcoming Events!")
+	meta(name="keywords", content="Fine Alley, Live Entertainment, Live Music, Midland Ontario, Simcoe County")
+
+	meta(name="twitter:card", content="summary_large_image")
+	meta(name="twitter:site", content="@finealley")
+	meta(name="twitter:creator", content="@finealley")
+	meta(name="twitter:title", content="Fine Alley The Band")
+	meta(name="twitter:description", content="Get more information on Fine Alley and Upcoming Events!")
+	meta(name="twitter:image:src", content="/includes/img/finealleySlide1140x350.jpg")
+
+	meta(property="fb:app_id",content="272812729524274")
+	meta(property="og:url",content="http://www.finealley.com")
+	meta(property="og:site_name",content="Fine Alley")
+	meta(property="og:type",content="website")
+	meta(property="og:locale",content="en_US")
+	meta(property="og:image",content="http://www.finealley.com/includes/img/finealleySplash1500.jpg")
+
+block style
+	style
+		@import url('/includes/css/FineAlleyWebsite.css');
+
+block content
+	#about.area-highlight
+		include:markdown ./../markdown/aboutus.md
+	#events.area-highlight
+		include:markdown ./../markdown/events.md
+		.row.hidden-xs.event-header
+			.col-sm-4 What
+			.col-sm-4 Where
+			.col-sm-4 When
+		+event("May Show","May 23rd, 2014 @ 9pm","The Boat House")
+	#gallery.area-highlight
+		h2 Photos of Us
+
+		.gallery.row
+			+galleryimage("https://s3.amazonaws.com/finealley/gallery/1511671_10151998823282149_798502063_o.jpg", "fine alley performing")
+			+galleryimage("https://s3.amazonaws.com/finealley/gallery/1669694_10151998823347149_1867396889_o.jpg", "fine alley performing")
+			+galleryimage("https://s3.amazonaws.com/finealley/gallery/2013-11-15+22.19.37.jpg", "fine alley performing")
+		.gallery.row
+			+galleryimage("https://s3.amazonaws.com/finealley/gallery/_DSC3707.jpg", "fine alley performing")
+			+galleryimage("https://s3.amazonaws.com/finealley/gallery/_DSC3717-2.jpg", "fine alley performing")
+			+galleryimage("https://s3.amazonaws.com/finealley/gallery/_DSC3748-2.jpg", "fine alley performing")
+		.gallery.row
+			+galleryimage("https://s3.amazonaws.com/finealley/gallery/_DSC3805.jpg", "fine alley performing")
+			+galleryimage("https://s3.amazonaws.com/finealley/gallery/_DSC3825-2.jpg", "the fine alley drum skin")
+			+galleryimage("https://s3.amazonaws.com/finealley/gallery/_DSC3827-2.jpg", "fine alley performing")
+	#social-media.area-highlight
+		include:markdown ./../markdown/social.md
+		
