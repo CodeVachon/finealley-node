@@ -13,7 +13,7 @@ mixin event(title, when, where)
 			| #{when}
 
 mixin galleryimage(src, caption)
-	.gallery-image.col-xs-12.col-sm-4
+	.gallery-image.col-xs-12.col-md-4
 		img(src=src, alt=caption).img-responsive.img-thumbnail
 
 block title
@@ -35,6 +35,7 @@ block title
 	meta(property="og:locale",content="en_US")
 	meta(property="og:image",content="http://www.finealley.com/includes/img/finealleySplash1500.jpg")
 
+	link(rel='icon',type='image/png',href='/favicon.png')
 block style
 	style @import url('/includes/css/FineAlleyWebsite.css');
 
@@ -42,8 +43,11 @@ block content
 	#about.area-highlight
 		include:markdown ./../markdown/aboutus.md
 		
-	#video.area-highlight.embed-responsive.embed-responsive-16by9
-		iframe(src="https://www.youtube.com/embed/RwyyN6eae14?rel=0",allowfullscreen).embed-responsive-item
+	#video.area-highlight
+		h2 Have a Listen
+		.embed-responsive.embed-responsive-16by9
+			iframe(src="https://www.youtube.com/embed/RwyyN6eae14?rel=0",allowfullscreen).embed-responsive-item
+
 	#events.area-highlight
 		include:markdown ./../markdown/events.md
 		.row.hidden-xs.event-header
@@ -55,6 +59,7 @@ block content
 		+event("Mid Summer Blowout","July 31st, 2015 @ 9pm","The Boat House")
 		+event("Labour Day Show","September 4th, 2015 @ 9pm","The Boat House")
 		+event("Birthday Bash","November 14th, 2015 @ 9pm","The Boat House")
+
 	#gallery.area-highlight
 		h2 Photos of Us
 
@@ -70,6 +75,8 @@ block content
 			+galleryimage("https://s3.amazonaws.com/finealley/gallery/_DSC3805.jpg", "fine alley performing")
 			+galleryimage("https://s3.amazonaws.com/finealley/gallery/_DSC3825-2.jpg", "the fine alley drum skin")
 			+galleryimage("https://s3.amazonaws.com/finealley/gallery/_DSC3827-2.jpg", "fine alley performing")
+
 	#social-media.area-highlight
 		include:markdown ./../markdown/social.md
 		
+	#contact-us.area-highlight
