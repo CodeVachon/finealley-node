@@ -10,14 +10,12 @@ var express = require('express'),
 app.use(express.static(__dirname + '/wwwroot'));
 
 app.post("/send", jsonBodyParser, urlencode, function(request, response) {
-    fs.readFile("./settings.json", "utf-8", function(error, contents) {
+    fs.readFile(__dirname + "/settings.json", "utf-8", function(error, contents) {
         if (error) {
             console.log(error);
             response.status(500).json("error");
         } else {
             var settings = JSON.parse(contents);
-            console.log(settings);
-
             var transporter = nodemailer.createTransport(settings.mailer);
             transporter.sendMail({
                 from: request.body.emailAddress,
