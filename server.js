@@ -9,10 +9,6 @@ var express = require('express'),
 
 app.use(express.static(__dirname + '/wwwroot'));
 
-
-console.log(process);
-
-
 app.post("/send", jsonBodyParser, urlencode, function(request, response) {
     fs.readFile(__dirname + "/settings.json", "utf-8", function(error, contents) {
         var settings;
@@ -22,11 +18,11 @@ app.post("/send", jsonBodyParser, urlencode, function(request, response) {
                 "mailer": {
                     "service": "gmail",
                     "auth": {
-                        "user": process.env.maileruser || "ENV.maileruser",
-                        "pass": process.env.mailerpassword || "ENV.mailerpassword"
+                        "user": process.env.maileruser || "process.env.maileruser",
+                        "pass": process.env.mailerpassword || "process.env.mailerpassword"
                     }
                 },
-                "sendMailTo": process.env.mailersend || "ENV.mailersendto"
+                "sendMailTo": process.env.mailersendto || "process.env.mailersendto"
             }
             fs.writeFileSync(__dirname + "/settings.json", JSON.stringify(settings, null, "\t"));
         } else {
