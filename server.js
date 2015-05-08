@@ -9,6 +9,10 @@ var express = require('express'),
 
 app.use(express.static(__dirname + '/wwwroot'));
 
+
+console.log(process);
+
+
 app.post("/send", jsonBodyParser, urlencode, function(request, response) {
     fs.readFile(__dirname + "/settings.json", "utf-8", function(error, contents) {
         var settings;
