@@ -16,6 +16,13 @@ app.post("/send", jsonBodyParser, urlencode, function(request, response) {
         return;
     }
 
+    var validationErrors = require('./bin/validateEmailForm').validate(request.body);
+    if (validationErrors) {
+        response.status(417).json({ errors: validationErrors});
+        return;
+    }
+
+
     fs.readFile(__dirname + "/settings.json", "utf-8", function(error, contents) {
         var settings;
         if (error) {
@@ -37,6 +44,7 @@ app.post("/send", jsonBodyParser, urlencode, function(request, response) {
             if (process.env.mailerpassword) { settings.mailer.auth.pass = process.env.mailerpassword; }
             if (process.env.mailersendto) { settings.sendMailTo = process.env.mailersendto; }
         }
+
         var transporter = nodemailer.createTransport(settings.mailer);
         transporter.sendMail({
             replyTo: request.body.emailAddress,

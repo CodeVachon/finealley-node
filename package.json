@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Finealley Package",
   "scripts": {
+    "test": "mocha tests/test.js",
     "start": "node bin/www"
   },
   "devDependencies": {
@@ -14,7 +15,8 @@
     "grunt-contrib-sass": "^0.8.1",
     "grunt-contrib-uglify": "^0.6.0",
     "grunt-contrib-watch": "^0.6.1",
-    "markdown-js": "0.0.3"
+    "markdown-js": "0.0.3",
+    "mocha": "^2.2.4"
   },
   "dependencies": {
     "body-parser": "^1.12.3",
