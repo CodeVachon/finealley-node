@@ -1,6 +1,6 @@
 About Fine Alley
 ----------------
 
-Fine Alley is band centrally located in Midland, Ontario and provides live music entertainment for Simcoe County and the surrounding area.
+Unfortunately, we regret to inform everyone that Fine Alley will no longer be performing as group for the forceable future.  We would like to thank our fans for coming out and supporting us over the last 3 years.  We have had a blast performing for you!
 
-We play rock music from the 70's, 90's, and some of today's modern hits. If you are a fan of Pink Floyd, Matt Good, and / or similar music, than we are a must a see for you.
+Fine Alley was a band centrally located in Midland, Ontario and provided live music entertainment for Simcoe County and the surrounding area. We played rock music from the 70's, 90's, and some of today's modern hits.

@@ -1,3 +1,4 @@
+/*
 var _contactForm = $('<form>',{action:'post', method:'/send'}).on('submit', function(e) {
     e.preventDefault();
     var _form = $(this);
@@ -77,3 +78,4 @@ $('#contact-us')
     .append($('<h2>').html("Send Us a Message!"))
     .append(_contactForm)
 ;
+*/
